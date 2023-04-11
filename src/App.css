@@ -1,38 +1,105 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  background-image: url("https://images.unsplash.com/photo-1677843019211-0c1ba7e1f377?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDIxNHxpVUlzblZ0akIwWXx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=654&q=80");
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background-color: black;
+  overflow: visible;
+  width: 100%;
+  text-align: center;
+  color: #b8a9c9;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: small;
+  opacity: 0.5;
+}
+
+.Messages-list {
+  padding: 15px 0;
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+  list-style: none;
+  padding-left: 0;
+  flex-grow: 1;
+  overflow: auto;
+}
+
+.Messages-message {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin-top: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+.Messages-message.currentMember {
+  /*justify-content: flex-end;*/
+  flex-direction: row-reverse;
+  text-align: right;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Message-content {
+  display: inline-block;
+}
+
+.currentMember > .Message-content {
+  align-items: flex-end;
+}
+
+.Messages-message > .avatar {
+  height: 22px;
+  width: 22px;
+  border-radius: 45%;
+  display: inline-block;
+  margin: 0 7px -7px;
+}
+
+.Message-content > .username {
+  display: block;
+  color: gray;
+  font-size: 14px;
+  padding-bottom: 4px;
+}
+
+.Message-content > .text {
+  padding: 10px;
+  max-width: 400px;
+  margin: 0;
+  border-radius: 13px;
+  background-color: #92a8d1;
+  color: black;
+  display: inline-block;
+}
+
+.currentMember > .Message-content .text {
+  background-color: #ffef96;
+}
+
+form {
+  display: flex;
+  width: 94%;
+  justify-content: space-between;
+  max-width: 875px;
+  margin: 0 auto 40px;
+}
+
+input {
+  padding: 5px;
+  font-size: 15px;
+  border-radius: 8px;
+  border: 1px solid blue;
+  flex-grow: 1;
+  background-color: aliceblue;
+}
+
+button {
+  padding: 7px 10px;
+  font-size: 16px;
+  background-color: #b8a9c9;
+  color: black;
+  border: none;
+  border-radius: 8px;
+  margin-left: 9px;
 }
